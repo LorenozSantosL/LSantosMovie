@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="~/css/csslogin.css" />
+    </head>
+
+    <body>
+        <div class="conteiner">
+       @using (Html.BeginForm("Login", "Usuario", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+             <form>
+      <h1>Inicio de Sesión</h1>
+      <div class="inset">
+      <p>
+        <label for="email">Email</label>
+        <input type="text" name="Email" id="Email">
+      </p>
+      <p>
+        <label for="password">Password</label>
+        <input type="password" name="Password" id="Password">
+      </p>
+      </div>
+      <p class="p-container">
+        <span>Forgot password ?</span>
+        <input type="submit" name="go" id="go" value="Log in">
+      </p>
+    </form>
+        }
+       
+    </div>
+    </body>
+
+
+    
+</html>

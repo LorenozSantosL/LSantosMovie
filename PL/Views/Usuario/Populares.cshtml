@@ -1,0 +1,126 @@
+﻿@model ML.Movie
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+	 Layout = "~/Views/Shared/_Layout.cshtml";
+}
+   <link rel="stylesheet" href="~/css/MovieStyle.css" />
+
+<section class="dark">
+	<div class="container py-4">
+		<h1 class="h1 text-center" id="pageHeaderTitle">Mis Favoritas</h1>
+
+
+		@foreach(ML.Movie movie in Model.Movies)
+		{
+			@*<article class="postcard dark blue">
+				<a class="postcard__img_link" href="#" >
+					<img class="postcard__img" style=" width: 70%; object-fit: cover;" src="@movie.Imagen" alt="Image Title" />
+				</a>
+				<div class="postcard__text">
+					<h1 class="postcard__title blue"><a href="#">@movie.Titulo</a></h1>
+					<div class="postcard__bar"></div>
+					<div class="postcard__preview-txt" style="color: black;">@movie.Descripcion</div>
+					<ul class="postcard__tagbox p-2" style="margin-top: 10px; list-style: none;">
+
+						<li class="tag__item play blue" >
+							<a href="#" class="p-2" style="background-color: lightgray; padding: 5px; border-radius: 4px; margin-top: 10px;"><i class="fa-solid fa-compact-disc fa-beat"></i>Reproducir</a>
+						</li>
+						<li class="tag__item play blue" >
+							<a class="btn btn-outline-success bi bi-cart-plus" href="@Url.Action("Favoritos","Usuario", new { IdMovie=@movie.IdMovie, favorite=true  })">Añadir</a>
+						</li>
+					</ul>
+				</div>
+			</article>*@
+
+								<div id="container">	
+	
+					<!-- Start	Product details -->
+						<div class="product-details">
+		
+										<!-- 	Product Name -->
+									<h1>@movie.Titulo</h1>
+								<!-- 		<span class="hint new">New</span> -->
+								<!-- 		<span class="hint free-shipping">Free Shipping</span> -->
+								<!-- 		the Product rating -->
+								@*<span class="hint-star star">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									<i class="fa fa-star-o" aria-hidden="true"></i>
+								</span>*@
+		
+	
+							<!-- The most important information about the product -->
+									<p class="information">@movie.Descripcion</p>
+
+		
+		
+									<!-- 		Control -->
+									<div class="control">
+	
+									<!-- Start Button buying -->
+										<button class="btn">
+									<!-- 		the Price -->
+										 <span class="price"><i class="fa-solid fa-film fa-beat"></i></span>
+									<!-- 		shopping cart icon-->
+									   <span class="shopping-cart"><i class="fa-regular fa-circle-play"  aria-hidden="true"></i></span>
+									   <a class="buy" href="@Url.Action("Favoritos","Usuario", new { IdMovie=@movie.IdMovie, favorite=false  })">Ver</a>
+									<!-- 		Buy Now / ADD to Cart-->
+									  @* <span class="buy">Buy Now</span>*@
+									 </button>
+
+
+									 <button class="btn">
+									<!-- 		the Price -->
+										 @*<span class="price"><i class="fa-solid fa-heart"></i></span>*@
+									<!-- 		shopping cart icon-->
+									 @*  <span class="shopping-cart"><i class="fa-regular fa-circle-play"  aria-hidden="true"></i></span>*@
+									   <a class="buy" href="@Url.Action("Favoritos","Usuario", new { IdMovie=@movie.IdMovie, favorite=true  })"><i class="fa-solid fa-heart fa-beat"></i></a>
+									<!-- 		Buy Now / ADD to Cart-->
+									  @* <span class="buy">Buy Now</span>*@
+									 </button>
+										<!-- End Button buying -->
+	
+									</div>
+			
+						</div>
+	
+					<!-- 	End	Product details   -->
+	
+	
+	
+					<!-- 	Start product image & Information -->
+	
+					<div class="product-image">
+	
+						<img src="@movie.Imagen" alt="Omar Dsoky">
+	
+					<!-- 	product Information-->
+					@*<div class="info">
+						<h2>The Description</h2>
+						<ul>
+							<li><strong>Sun Needs: </strong>Full Sun</li>
+							<li><strong>Soil Needs: </strong>Damp</li>
+							<li><strong>Zones: </strong>9 - 11</li>
+							<li><strong>Height: </strong>2 - 3 feet</li>
+							<li><strong>Blooms in: </strong>Mid‑Summer - Mid‑Fall</li>
+							<li><strong>Features: </strong>Tolerates heat</li>
+						</ul>
+					</div>*@
+					</div>
+					<!--  End product image  -->
+
+
+					</div>
+
+
+		}
+			
+		
+		
+	</div>
+</section>
